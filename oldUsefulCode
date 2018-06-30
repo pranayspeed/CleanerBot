@@ -1,0 +1,22 @@
+    def loadMap(self, obj):
+        print("loading Map...")
+        global sand, ptdraw, pts
+        self.painter.canvas.clear()
+        sand = np.zeros((longueur,largeur))     
+        ptdraw = ((np.loadtxt('sandMap.txt')).astype(int)).tolist()
+        pnts = ptdraw
+        pnts = np.array(pnts).reshape(int(len(pnts)/2), 2).tolist()
+        #pnts = ((1,1), (5,5), (3,3) , (8,8), (4,4))
+        sorted_list = dl.sort_pt(pnts)
+        ptlinedraw = np.array(sorted_list).ravel().tolist()
+        count = len(ptdraw)    # 3 rows in your example
+        with self.painter.canvas:
+            Color(0.8,0.0,0.2)
+            Line(points = ptlinedraw)
+            for i in range(0,count,2):
+               pts = Point()
+               sand[ptdraw[i]][ptdraw[i+1]]=1
+               Color(0.8,0.7,0)
+               pts.add_point(ptdraw[i],ptdraw[i+1])
+               #pts.pointsize=1
+               #pts.flag_update()
