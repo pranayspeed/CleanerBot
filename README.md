@@ -3,11 +3,7 @@
 <html> 
 <body> 
 
-<video width="400" controls>
-  <source src="https://youtu.be/tzGm5WQNsWA" type="video/mp4">
-  <source src="mov_bbb.ogg" type="video/ogg">
-
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tzGm5WQNsWA?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 </body> 
